@@ -33,12 +33,35 @@ document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{
   document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t===b));
   ["care","dress","date"].forEach(name=>$(name+"Panel").classList.toggle("hidden",b.dataset.panel!==name));
 }));
-document.querySelectorAll(".outfit-button").forEach(b=>b.addEventListener("click",()=>{
-  document.querySelectorAll(".outfit-button").forEach(t=>t.classList.toggle("selected",t===b));
-  const outfit=b.dataset.outfit;
-  $("character").style.filter=outfit==="pajamas"?"hue-rotate(155deg) saturate(.75)":outfit==="date"?"hue-rotate(325deg) saturate(.85)":"none";
-  say(outfit==="pajamas"?"My comfiest outfit! 🌙":outfit==="date"?"Ready for our little date! 🌷":"I love my cottagecore dress! ♡");
-}));
+document.querySelectorAll(".outfit-button").forEach(b =>
+  b.addEventListener("click", () => {
+
+    document.querySelectorAll(".outfit-button").forEach(t =>
+      t.classList.toggle("selected", t === b)
+    );
+
+    const outfit = b.dataset.outfit;
+    const character = $("character");
+
+    const outfits = {
+      everyday: "assets/gelin-character.png",
+      pajamas: "assets/gelin-pajamas.png",
+      date: "assets/gelin-date.png"
+    };
+
+    if (outfits[outfit]) {
+      character.src = outfits[outfit];
+    }
+
+    say(
+      outfit === "pajamas"
+        ? "My comfiest outfit! 🌙"
+        : outfit === "date"
+        ? "Ready for our little date! 🌷"
+        : "I love my cottagecore dress! ♡"
+    );
+  })
+);
 function goRoom(cafe){
   $("room").classList.toggle("cafe",cafe);
   $("roomLabel").textContent=cafe?"☕ Little Fern Café":"⌂ Gelin's Bedroom";
