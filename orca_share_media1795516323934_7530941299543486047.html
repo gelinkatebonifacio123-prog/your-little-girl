@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8e2ce">
+  <title>Our Little World ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="game-shell">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-bow">🎀</div>
+      <div><p class="eyebrow">a tiny place made with love</p><h1>Our Little World <span>♡</span></h1><p class="subtitle">A little world made for us</p></div>
+    </div>
+    <div class="top-stats">
+      <div class="stat-card love"><span class="stat-icon">💗</span><div><b>Love <strong id="loveValue">50%</strong></b><div class="meter"><i id="loveMeter"></i></div></div></div>
+      <div class="stat-card"><span class="stat-icon">☀️</span><div><b>Happiness <strong id="happyValue">80%</strong></b><div class="meter"><i id="happyMeter"></i></div></div></div>
+    </div>
+    <div class="top-actions"><button class="round-button" id="soundButton" aria-label="Toggle sound">♫</button><button class="round-button" id="resetButton" aria-label="Reset game">⚙</button></div>
+  </header>
+
+  <section id="startScreen" class="start-screen">
+    <div class="start-copy">
+      <span class="tiny-flower">✿ ✿ ✿</span>
+      <p class="eyebrow">welcome to</p><h2>Gelin's Cozy Corner</h2>
+      <p>A tiny cottagecore world where you can care for Gelin, choose her outfits, decorate her room, and spend sweet little moments together.</p>
+      <button class="main-button" id="startButton">Start our little world ♡</button>
+      <small>made with love, especially for you two</small>
+    </div>
+    <div class="start-art"><img src="assets/gelin-character.png" alt="Chibi Gelin in a sage-green dress"></div>
+  </section>
+
+  <section id="gameScreen" class="hidden">
+    <div class="game-layout">
+      <div class="main-column">
+        <div class="room-heading"><span id="roomLabel">⌂ Gelin's Bedroom</span><span class="day-pill">DAY <b id="dayCount">01</b></span></div>
+        <div class="room" id="room">
+          <div class="room-overlay"></div>
+          <div class="speech" id="speech">Hi! I'm happy you're here ♡</div>
+          <img class="room-character" id="character" src="assets/gelin-character.png" alt="Gelin">
+          <div class="sparkle" id="sparkle"></div>
+        </div>
+        <nav class="tabs">
+          <button class="tab active" data-panel="care">♡ Care</button>
+          <button class="tab" data-panel="dress">✿ Dress up</button>
+          <button class="tab" data-panel="date">☕ Dates</button>
+        </nav>
+        <section class="panel" id="carePanel">
+          <h3>What would you like to do? ♡</h3>
+          <div class="action-grid">
+            <button class="action-button" data-action="feed"><span>🍓</span>Feed</button>
+            <button class="action-button" data-action="shower"><span>🫧</span>Shower</button>
+            <button class="action-button" data-action="sleep"><span>🛏️</span>Sleep</button>
+            <button class="action-button" data-action="hug"><span>💗</span>Hug</button>
+            <button class="action-button" data-action="kiss"><span>💋</span>Kiss</button>
+            <button class="action-button" data-action="dance"><span>♫</span>Dance</button>
+          </div>
+        </section>
+        <section class="panel hidden" id="dressPanel">
+          <h3>Choose a little outfit ♡</h3>
+          <div class="outfit-grid">
+            <button class="outfit-button selected" data-outfit="cottage"><img src="assets/outfits-accessories.png" alt="">🌿 Cottage dress</button>
+            <button class="outfit-button" data-outfit="pajamas">🌙 Cozy pajamas</button>
+            <button class="outfit-button" data-outfit="date">🌷 Date outfit</button>
+          </div>
+          <p class="hint">Outfit choices change Gelin's little accessories and the scene mood.</p>
+        </section>
+        <section class="panel hidden" id="datePanel">
+          <h3>Let's go somewhere sweet! ♡</h3>
+          <div class="date-card"><img src="assets/cafe.png" alt="Little Fern Cafe illustration"><div><b>Little Fern Café</b><p>Warm tea, tiny cakes, and time together.</p><button class="main-button" id="cafeButton">Go on a café date ♡</button></div></div>
+          <p id="dateMessage" class="hint">Your next little adventure is waiting.</p>
+        </section>
+      </div>
+      <aside class="side-column">
+        <div class="side-card weather"><div><b>Today</b><span>☀️ 24°C</span></div><small>soft sunshine outside</small></div>
+        <div class="side-card"><h3>Current Room</h3><button class="side-link active" id="bedroomButton">⌂ Bedroom</button><button class="side-link" id="cafeRoomButton">☕ Café</button></div>
+        <div class="side-card"><h3>Little reminders</h3><p>♡ Take care of each other</p><p>✿ Make time for small joys</p><p>☕ Save a seat for two</p></div>
+        <div class="side-note">Made with love,<br>especially for Evgeni ♡</div>
+      </aside>
+    </div>
+  </section>
+  <footer class="footer">✿ every little moment matters ✿</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
