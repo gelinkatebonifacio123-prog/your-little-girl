@@ -29,7 +29,7 @@
       <button class="main-button" id="startButton">Start our little world ♡</button>
       <small>made with love, especially for you two</small>
     </div>
-    <div class="start-art"><img src="assets/gelin-character.png" alt="Chibi Gelin in a sage-green dress"></div>
+    <div class="start-art"><img id="character" src="assets/gelin-character.png" alt="Chibi Gelin in a sage-green dress"></div>
   </section>
 
   <section id="gameScreen" class="hidden">
@@ -60,11 +60,11 @@
         </section>
         <section class="panel hidden" id="dressPanel">
           <h3>Choose a little outfit ♡</h3>
-          <div class="outfit-grid">
-            <button class="outfit-button selected" data-outfit="cottage"><img src="assets/outfits-accessories.png" alt="">🌿 Cottage dress</button>
-            <button class="outfit-button" data-outfit="pajamas">🌙 Cozy pajamas</button>
-            <button class="outfit-button" data-outfit="date">🌷 Date outfit</button>
-          </div>
+          <div class="outfit-options">
+    <button onclick="changeOutfit('default')">Everyday</button>
+    <button onclick="changeOutfit('pajamas')">Cozy Pajamas</button>
+    <button onclick="changeOutfit('date')">Date Outfit</button>
+</div>
           <p class="hint">Outfit choices change Gelin's little accessories and the scene mood.</p>
         </section>
         <section class="panel hidden" id="datePanel">
